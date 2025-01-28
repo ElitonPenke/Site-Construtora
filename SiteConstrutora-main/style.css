@@ -1,101 +1,163 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
-    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-    html {
-        scroll-behavior: smooth;
-    }
 
-    body {
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        line-height: 1.6;
-    }
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
 
-    header {
-        display: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 5px 20px;
-        background-color: #00000000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+body {
+    line-height: 1.6;
+}
 
-    #logo img {
-        max-width: 150px;
-        height: auto;
-    }
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.082);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
 
-    nav {
-        position: relative;
-    }
+header:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
+#logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+#check {
+    display: none;
+}
+
+label {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Banner e animações */
+.banner {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.imagendebanner{
+    position: absolute; 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    z-index: -1;
+    opacity: 40%;
+}
+
+.banner h1 {
+    margin-left: 3rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.banner h1:hover {
+    transform: scale(1.01);
+    color: #f39d129a;
+}
+
+.banner h3 {
+    margin-left: 4rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.banner h3:hover {
+    transform: scale(1.01);
+    color: #f39d129a;
+}
+
+
+.banner h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
     nav ul {
-        display: flex;
-        gap: 3px;
-        list-style: none;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-size: 1rem;
-        transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-        color: #007bff;
-    }
-
-    #check {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #check:checked ~ ul {
+        display: flex;
     }
 
     label {
-        display: none;
-        font-size: 2rem;
-        cursor: pointer;
+        display: block;
     }
 
-    /* Para celulares mobile */
-    @media (max-width: 768px) {
-        nav ul {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            right:30px ;
-            width: 100%;
-            padding: 10px 0;
-        }
-
-        nav ul li {
-            text-align: center;
-            margin: 10px 0;
-            flex-direction: row-reverse;
-        }
-
-        #check:checked ~ ul {
-            display: flex;
-        }
-
-        label {
-            display: block;
-        }
+    .banner h1 {
+        font-size: 1.5rem;
     }
 
-    /* Footer */
-    footer {
-        background-color: #f8f9fa;
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
+    .banner h3 {
+        font-size: 1rem;
     }
-
-    footer p {
-        color: #333;
-        font-size: 0.9rem;
+    .banner{
+        height: 60vh;
     }
+}
