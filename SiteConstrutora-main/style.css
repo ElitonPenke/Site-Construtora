@@ -75,23 +75,37 @@ label {
 
 /* Banner -------------------------------------------------------------------*/
 .banner {
-    position: relative;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    color: #ffffff;
-    overflow: hidden;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: #ffffff;
+  background-image: url('baner.webp'); 
+  background-size: cover;
+  background-attachment: fixed; /* Para dispositivos móveis */
+  background-position: center center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  
 }
 
-.imagendebanner{
-    position: absolute; 
-    width: 100%; height: 100%; 
-    object-fit: cover; 
-    z-index: -1;
-    opacity: 80%;
-    filter: brightness(0.65);
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.411); 
+  z-index: 1;
+}
+
+
+.banner h1,
+.banner .whatsapp-button {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima da camada escura */
 }
 
 .banner h1 {
@@ -133,12 +147,12 @@ label {
 
 
 .whatsapp-button {
-  margin-top: 2rem;
-  margin-left: 5rem;
+  margin-top: 5rem;
+  margin-left: 8rem;
   display: inline-block;
   background-color: #f39d12dc;
   color: rgb(255, 255, 255);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   padding: 12px 20px;
   border-radius: 10px;
@@ -162,7 +176,7 @@ label {
   .sobrenos {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1100px;
+    max-width: 1300px;
     width: 80%;
   }
 
@@ -200,11 +214,11 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
   }
 
   .image-section img {
-    width: 60%;
+    width: 50%;
     height: 100%;
     object-fit: cover;
     box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.39);
@@ -217,11 +231,12 @@ label {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 150%;
         right: 10px;
         background-color: rgba(0, 0, 0, 0.8);
-        padding: 10px 20px;
+        padding: 10px 30px;
         border-radius: 5px;
+        margin-right: 0;
     }
 
     nav ul li {
@@ -237,14 +252,21 @@ label {
     }
 
     .banner h1 {
-        font-size: 1.5rem;
+      background-color: rgba(255, 255, 255, 0);
+        font-size: 1.3rem;
+        border-radius: 0;
+        padding: 0;
+        margin-left: 2rem;
     }
 
     .banner h3 {
         font-size: 1rem;
     }
     .banner{
-        height: 60vh;
+      height: 75vh; /* Reduz a altura no celular */
+      background-size: cover; /* Garante que a imagem fique inteira sem cortes */
+      background-position: center; 
+      background-attachment: fixed; /* Evita problemas de parallax em mobile */
     }
     .sobrenos {
         flex-direction: column;
@@ -252,7 +274,7 @@ label {
 
       .text-section {
         padding: 10px;
-        text-align: center;
+        text-align: left;
       }
 
       .text-section h1 {
@@ -265,9 +287,16 @@ label {
 
       .image-section img {
         width: 90%;
+        background-color: #00000000;
       }
 
       .image-section img:nth-child(2) {
         display: none;
       }
+   
+.whatsapp-button {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size:1.2rem ;
+  }   
 }
