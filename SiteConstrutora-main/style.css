@@ -26,7 +26,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: rgba(0, 0, 0, 0.384);
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -59,7 +59,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    color:  #f39d129a;
 }
 
 #check {
@@ -73,7 +73,7 @@ label {
     color: white;
 }
 
-/* Banner e animações */
+/* Banner -------------------------------------------------------------------*/
 .banner {
     position: relative;
     height: 80vh;
@@ -90,10 +90,14 @@ label {
     width: 100%; height: 100%; 
     object-fit: cover; 
     z-index: -1;
-    opacity: 40%;
+    opacity: 80%;
+    filter: brightness(0.3);
 }
 
 .banner h1 {
+    background-color: rgba(0, 0, 0, 0.116);
+    padding: 0px 10px;
+    border-radius: 10px;
     margin-left: 3rem;
     font-size: 3rem;
     text-transform: uppercase;
@@ -107,6 +111,8 @@ label {
 }
 
 .banner h3 {
+    background-color: rgba(0, 0, 0, 0.116);
+    padding: 0px 10px;
     margin-left: 4rem;
     font-size: 3rem;
     text-transform: uppercase;
@@ -124,6 +130,64 @@ label {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+/* Parte do sobre nos -----------------------------------------------------------------------*/
+.sectionsobre {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .sobrenos {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .text-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .text-section span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .text-section h1 span {
+    color: #f39d129a;
+    font-size: 4rem;
+  }
+
+  .text-section p {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #000000;
+  }
+
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .image-section img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
 
 /* Mobile Responsivo */
 @media (max-width: 768px) {
@@ -160,4 +224,28 @@ label {
     .banner{
         height: 60vh;
     }
+    .sobrenos {
+        flex-direction: column;
+      }
+
+      .text-section {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .text-section h1 {
+        font-size: 36px;
+      }
+
+      .image-section {
+        justify-content: center;
+      }
+
+      .image-section img {
+        width: 90%;
+      }
+
+      .image-section img:nth-child(2) {
+        display: none;
+      }
 }
