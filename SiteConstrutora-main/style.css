@@ -81,7 +81,7 @@ label {
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     overflow: hidden;
 }
 
@@ -91,7 +91,7 @@ label {
     object-fit: cover; 
     z-index: -1;
     opacity: 80%;
-    filter: brightness(0.3);
+    filter: brightness(0.65);
 }
 
 .banner h1 {
@@ -107,7 +107,7 @@ label {
 
 .banner h1:hover {
     transform: scale(1.01);
-    color: #f39d129a;
+    color: rgba(243, 157, 18, 0.822);
 }
 
 .banner h3 {
@@ -122,7 +122,7 @@ label {
 
 .banner h3:hover {
     transform: scale(1.01);
-    color: #f39d129a;
+    color: rgba(243, 157, 18, 0.973);
 }
 
 
@@ -130,20 +130,40 @@ label {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+
+
+.whatsapp-button {
+  margin-top: 2rem;
+  margin-left: 5rem;
+  display: inline-block;
+  background-color: #f39d12dc;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.whatsapp-button:hover {
+  background-color: rgb(146, 92, 11); /* Cor ligeiramente mais escura ao passar o mouse */
+}
+
 /* Parte do sobre nos -----------------------------------------------------------------------*/
 .sectionsobre {
-    font-family: Arial, sans-serif;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
   }
 
   .sobrenos {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
-    width: 100%;
+    max-width: 1100px;
+    width: 80%;
   }
 
   .text-section {
@@ -164,7 +184,7 @@ label {
   }
 
   .text-section h1 span {
-    color: #f39d129a;
+    color: #f39d12ee;
     font-size: 4rem;
   }
 
@@ -180,13 +200,15 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
   }
 
   .image-section img {
-    width: 80%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     object-fit: cover;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.39);
+    border-radius: 2px;
   }
 
 /* Mobile Responsivo */
