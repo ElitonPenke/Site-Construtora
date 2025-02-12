@@ -234,18 +234,18 @@ label {
     
   }
 
-.subtituloservicos{
+.subtituloservicos, .subtituloportifolio{
   display: flex;
   flex-direction: column;
   justify-content: start; 
   
 }
 
-.services h1{
+.services h1, .subtituloportifolio{
   font-size: 2rem;
 
 }
- .services {
+ .services, .subtituloportifolio {
     text-align: center;
 
 }
@@ -272,6 +272,184 @@ label {
     background: #00000027;
     border-radius: 5px;
 }
+
+/*parte doportifolio -------------------------------------------------------------------------------------*/
+
+.subtituloportifolio{
+  margin-top: 5rem;
+}
+.subtituloportifolio h2{
+  color: rgba(243, 157, 18, 0.933);
+}
+
+.subtituloportifolio h1{
+  font-size: 2rem;
+}
+
+
+
+.carousel {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 600px; /* Altura fixa para evitar saltos */
+}
+
+.card {
+  width: 200px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  opacity: 0.5; /* Cards laterais são semi-transparentes */
+  filter: brightness(0.7); /* Cards laterais são mais escuros */
+  transform: scale(0.8); /* Cards laterais são menores */
+  position: absolute; /* Posiciona os cards absolutamente */
+  left: 50%; /* Centraliza horizontalmente */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translate(-50%, -50%) scale(0.8); /* Ajusta a posição e escala */
+}
+
+.card.prev {
+  left: 25%; /* Posiciona o card anterior à esquerda */
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.card.next {
+  left: 75%; /* Posiciona o próximo card à direita */
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.card.active {
+  width: 300px;
+  height: 550px;
+  transform: translate(-50%, -50%) scale(1); /* Mantém o card centralizado */
+  opacity: 1; /* Torna o card visível */
+  filter: brightness(1); /* Card central é totalmente visível */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Garante que o card ativo fique acima dos outros */
+}
+
+.card-image {
+  width: 100%;
+  height: 60%;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.control {
+  background-color: #db9319;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control.left {
+  left: -50px;
+}
+
+.control.right {
+  right: -50px;
+}
+
+.control:hover {
+  background-color: #704d16aa;
+}
+
+.gallery {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.gallery.active {
+  display: flex;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-content img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #db9319;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn:hover {
+  background-color: #0056b3;
+}
+
+
 
 
 

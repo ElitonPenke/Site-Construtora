@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#conteudo">Conteúdo</a></li>
+                    <li><a href="#portifolio">Conteúdo</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -69,6 +69,79 @@
             </div>
         </div>
     </section>
+
+    <section id="portifolio">
+        <div class="subtituloportifolio">
+            <h1>Nosso</h1>
+            <h2>Portifólio</h2>   
+        </div>
+        
+            <div class="carousel">
+                
+                <button class="control left" onclick="prevCard()">&#8592;</button>
+            
+                <div class="cards-container">
+                    <!-- Cards -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="casa.webp" alt="Card 1" onclick="openGallery(1)">
+                        </div>
+                        <div class="card-content">
+                            <ul class="listinha">
+                                <h3>Card 1</h3>
+                                <p>Valor: R$ 2.900,00</p>
+                                <p>230 m²</p>
+                                <p>Localidade: São Paulo</p>
+                                <p>Garagem p/ 2 Carro</p>
+                                <p>1 sala</p>
+                                <p>3 quartos</p>
+                                <p>2 banheiros</p>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="casa.webp" alt="Card 2" onclick="openGallery(2)">
+                        </div>
+                        <div class="card-content">
+                            <h3>Card 2</h3>
+                            <p>Valor: R$ 3.300,00</p>
+                            <p>Localidade: Vila das Belezas</p>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="casa.webp" alt="Card 3" onclick="openGallery(3)">
+                        </div>
+                        <div class="card-content">
+                            <h3>Card 3</h3>
+                            <p>Valor: R$ 3.800,00</p>
+                            <p>Localidade: Rio de Janeiro</p>
+                        </div>
+                    </div>
+            
+                    <!-- Adicione mais cards conforme necessário -->
+                </div>
+            
+                <button class="control right" onclick="nextCard()">&#8594;</button>
+            </div>
+            
+            <!-- Galeria -->
+            <div id="gallery" class="gallery">
+                <button class="close-btn" onclick="closeGallery()">&times;</button>
+                <div class="gallery-content">
+                    <img src="casa.webp" alt="Gallery Image 1">
+                    <img src="casa.webp" alt="Gallery Image 2">
+                    <img src="casa.webp" alt="Gallery Image 3">
+                    <img src="casa.webp" alt="Gallery Image 4">
+                </div>
+            </div>
+  
+    </section>
+    <script src="script.js"></script>
+
     </main>
 </body>
 </html>
